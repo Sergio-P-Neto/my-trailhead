@@ -1,0 +1,13 @@
+<apex:page id="inicialPage" showHeader="false" title="InicialPage" standardStylesheets="false" lightningStyleSheets="true">
+
+    <apex:slds />
+    
+    <body>
+        
+        <apex:include pageName="ContractHeader"/>
+
+        <apex:include pageName="SearchContract"/>
+
+    </body>
+
+</apex:page>

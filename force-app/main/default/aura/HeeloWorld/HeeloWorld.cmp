@@ -1,0 +1,30 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <aura:attribute name="title" type="String" default="Título - Meu Componente"/>
+    <aura:attribute name="buttonstate" type="boolean" default="false"/>
+    <aura:attribute name="number" type="integer"/>
+    <aura:attribute name="numberTexto" type="string"/>
+    <lightning:card>
+        <aura:set attribute="title">
+            <lightning:icon iconName="utility:connected_apps" size="small"/>
+            {!v.title}
+        </aura:set>
+        
+        
+        <aura:set attribute="footer">
+            <lightning:input id="input" type="integer" required="true" value="{!v.number}" 
+                             label="Entre com um número entre 1 e 100"/>
+            <ui:outputNumber value="{!v.numberTexto}"/>
+            <lightning:buttonStateful  
+                                      labelWhenOff="Verificar Registro"                         
+                                      labelWhenOn="Verificar Registro"
+                                      labelWhenHover="Verificar Registro"
+                                      iconNameWhenOff="utility:close"
+                                      iconNameWhenOn="utility:check"
+                                      iconNameWhenHover="utility:close"
+                                      variant="brand"
+                                      state="{! v.number }"
+                                      onclick="{! c.calc}"
+                                      />
+        </aura:set>
+    </lightning:card>
+</aura:component>

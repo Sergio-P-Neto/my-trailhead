@@ -1,0 +1,48 @@
+<apex:page id="searchContract" showHeader="false" title="Search" standardStylesheets="false" lightningStyleSheets="true">
+    
+    <apex:slds />
+    
+    <body>
+
+        <div id="searchPage" class="slds-m-horizontal_xx-large slds-m-top_xx-large">
+
+            <div id="bannerFindCnpj" class="slds-m-horizontal_xx-large slds-grid slds-box slds-box_x-small slds-theme_shade">
+                
+                <div id="image">
+                    <apex:image url="{!URLFOR($Resource.lupa, 'Lupa/lupa.JPG')}"/>
+                </div>
+
+                <div id="write">
+                    <p class="slds-text-heading_large slds-m-top_x-small">Busca Contrato</p>
+                </div>
+
+            </div>
+
+            <div id="searchContract" class="slds-grid slds-gutters slds-m-horizontal_xx-large slds-m-top_xx-large">
+                
+                <div id="inputCnpj" class="slds-col slds-m-horizontal_xx-large">
+                    
+                    <div id="cnpj" class="slds-col slds-m-horizontal_xx-large slds-form-element__control slds-input-has-fixed-addon">
+                        <span class="slds-form-element__addon" id="lupa">
+                            <apex:image url="{!URLFOR($Resource.lupa2, 'Lupa2/lupa2.JPG')}"/>
+                        </span>
+
+                        <input type="text" id="textInput" placeholder="Pesquise CPF/CNPJ" aria-labelledby="fixed-text-label fixed-text-addon-pre fixed-text-addon-post" class="slds-input"/>
+                        
+                        <div id="search" class="slds-col slds-m-right_xx-large slds-text-align_center" style="padding:0.5rem;background:#0066ff">
+                            <a href="https://sergio-1-sergio-dev-ed--c.visualforce.com/apex/SelectContract?core.apexpages.request.devconsole=1" class="slds-text-color_inverse slds-m-top_xx-large slds-text-link_reset slds-text-heading_medium slds-m-around_xx-small">
+                                Buscar
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</apex:page>

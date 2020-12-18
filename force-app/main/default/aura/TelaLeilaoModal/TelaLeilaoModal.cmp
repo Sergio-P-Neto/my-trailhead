@@ -1,0 +1,23 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="TelaLeilaoController">
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="infosLance" type="Object"/>
+
+    <div aura:id="exampleModal" class="slds-modal slds-fade-in-open hideDiv" aria-hidden="false" role="dialog">
+        <div class="slds-modal__container" style="max-width:50rem;">
+            <div class="slds-modal__header">
+                <h2 class="slds-text-heading--medium">Confirmar Lance</h2>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium">
+                <div class="modalContent">
+                   <p>Seu lance mínimo deve ser de R${!v.infosLance.novoValor}</p><br/><br/>
+                   <p>Números de lance até o momento: {!v.infosLance.lanceNumeros}</p><br/>
+                </div>
+            </div>
+            <div class="slds-modal__footer">
+                <button class="slds-button slds-button_destructive" onclick="{!c.hideExampleModal}" value="0">Cancelar</button>
+                <button class="slds-button slds-button--neutral slds-button--brand" onclick="{!c.hideExampleModal}" value="1">Ok</button>
+            </div>
+        </div>
+    </div>
+</aura:component>

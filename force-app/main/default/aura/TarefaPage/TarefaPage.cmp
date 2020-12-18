@@ -1,0 +1,50 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="MultiPicklistController">
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:attribute name="conta" type="Account" default="{sobjectType : 'Account'}"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="selected" type="List" default="[]"/>
+    <aura:attribute name="taa" type="List" default="[]"/>
+    <aura:attribute name="options" type="List" default="[]"/>
+
+    <div class="slds-box">
+        <div class="slds-panel">
+            <lightning:accordion allowMultipleSectionsOpen="true">
+
+                <lightning:accordionSection label="Dados Conta">
+                    <lightning:recordEditForm aura:id="recordViewForm"
+                                            recordId="{!v.recordId}"
+                                            recordTypeId="{!v.conta}"
+                                            objectApiName="Account">
+
+                        <lightning:messages />
+                        <p style="font-size: 16px"><b>Nome da conta</b></p>
+                        <lightning:outputField variant="label-hidden" fieldName="Name"/>
+                        <br/>
+
+                        <lightning:inputField fieldName="Phone"/>
+                        <br/>
+
+                        <lightning:dualListbox name="acoes"
+                                            label="Ações possíveis"
+                                            sourceLabel="Dispnível"
+                                            selectedLabel="Escolhidas"
+                                            options="{!v.options}"
+                                            onchange="{!c.handleChange}"/>
+                        <br/>
+
+                        <aura:iteration items="{!v.selected}" var="val" indexVar="indvar">
+                            <li>
+                                {!val}
+                            </li>
+                        </aura:iteration> 
+
+                        <lightning:button variant="brand" type="submit" label="Salvar" onclick="{!c.alteraNome}"/>
+                                            
+                    </lightning:recordEditForm>
+                </lightning:accordionSection>
+            </lightning:accordion>
+        </div>
+	</div>
+</aura:component>

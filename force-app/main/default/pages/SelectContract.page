@@ -1,0 +1,95 @@
+<apex:page id="selectContract" showHeader="false" title="Select" standardStylesheets="false" lightningStyleSheets="true">
+
+    <apex:slds />
+
+    <apex:include pageName="InicialPage"/>
+
+    <div id="divPrincipal" class="slds-m-horizontal_xx-large slds-m-top_xx-large">
+
+        <div id="infos" class="slds-m-horizontal_xx-large slds-box slds-box_x-small slds-theme_shade">
+
+            <div class="slds-grid slds-grid_vertical">
+                
+                <p id="customerName" class="slds-text-heading_medium">
+                    <strong>Adryel Guimarães</strong>
+                </p>
+
+                <div id="objectInfos" class="slds-grid">
+            
+                    <div id="objectValues1" class="slds-col">
+                        <p id="fieldName1" class="slds-text-body_small">Cliente desde</p>
+                        <p id="fieldValue1">10/05/2008</p>
+                    </div>
+                    
+                    <div id="objectValues2" class="slds-col">
+                        <p id="fieldName2" class="slds-text-body_small">CPF</p>
+                        <p id="fieldValue1">28692371971</p>
+                    </div>
+                    
+                    <div id="objectValues3" class="slds-col">
+                        <p id="fieldName3" class="slds-text-body_small">Telefone</p>
+                        <p id="fieldValue1">11-955783233</p>
+                    </div>
+
+                    <div id="objectValuesEmpty1" class="slds-col">
+                    </div>
+        
+                    <div id="objectValuesEmpty2" class="slds-col">
+                    </div>
+        
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="values" class="slds-m-horizontal_xx-large slds-box slds-box_x-small">
+            
+            <div id="fields" class="slds-grid slds-wrap" style="background:#f5f5f5">
+                
+                <div class="slds-col slds-size_1-of-3">
+                    <strong>NÚMERO CONTRATO</strong>
+                    <apex:image url="{!URLFOR($Resource.seta, 'Setinha/seta.JPG')}"/>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3">
+                    <strong>Data de início</strong>
+                    <apex:image url="{!URLFOR($Resource.seta, 'Setinha/seta.JPG')}"/>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3">
+                    <strong>Data de fim</strong>
+                    <apex:image url="{!URLFOR($Resource.seta, 'Setinha/seta.JPG')}"/>
+                </div>
+
+            </div>
+
+            <div id="values" class="slds-grid slds-wrap">
+                
+                <div class="slds-col slds-size_1-of-3">
+                    <a href="https://sergio-1-sergio-dev-ed--c.visualforce.com/apex/ContractDetail?core.apexpages.request.devconsole=1" class="slds-has-blur-focus">
+                        000111
+                    </a>
+                    <p>000222</p>
+                    <p>000333</p>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3">
+                    <p>18/04/2019</p>
+                    <p>19/04/2019</p>
+                    <p>20/04/2019</p>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3">
+                    <p>18/08/2019</p>
+                    <p>19/04/2019</p>
+                    <p>20/10/2019</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</apex:page>

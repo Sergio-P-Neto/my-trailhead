@@ -1,0 +1,117 @@
+<apex:page id="contractDetail" showHeader="false" title="Details" standardStylesheets="false" lightningStyleSheets="true" >
+    
+    <apex:slds />
+
+    <apex:include pageName="ContractHeader"/>
+
+    <div id="divPrincipal" class="slds-m-horizontal_xx-large">
+    
+        <div id="contract" class="slds-m-horizontal_xx-large slds-grid slds-box slds-theme_shade">
+                    
+            <div id="logo">
+                <apex:image url="{!URLFOR($Resource.mala, 'Case/mala.JPG')}" />
+            </div>
+            
+            <div id="objectName">
+                <p>Contrato</p>
+                <p><strong>000111</strong></p>
+            </div>
+
+        </div>
+
+        <div id="objectInfos" class="slds-m-horizontal_xx-large slds-grid slds-box">
+            
+            <div id="objectValues1" class="slds-col">
+                <p>Data de início</p>
+                <p>27/01/2019</p>
+            </div>
+            
+            <div id="objectValues2" class="slds-col">
+                <p>Data de fim</p>
+                <p>27/01/2019</p>
+            </div>
+            
+            <div id="objectValues3" class="slds-col">
+                <p>Número do contrato</p>
+                <p>000111</p>
+            </div>
+
+            <div id="objectValuesEmpty1" class="slds-col">
+            </div>
+
+            <div id="objectValuesEmpty2" class="slds-col">
+            </div>
+
+        </div>
+
+        <div id="actions" class="slds-m-horizontal_xx-large slds-m-top_small">
+
+            <div class="slds-box">
+
+                <div class="slds-text-heading_small">
+
+                    <div class="slds-tabs_default slds-tabs_medium ">
+                        <ul class="slds-tabs_default__nav" role="tablist">
+                            <li class="slds-tabs_default__item slds-is-active" title="Item One" role="presentation">
+                                <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="tab-default-1__item">AÇÕES</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <fieldset id="types" class="slds-form-element">
+
+                        <div class="slds-form-element__control slds-text-heading_large">
+                            
+                            <span class="slds-radio slds-text-heading_small slds-m-top_small">
+                                <input id="type1" type="radio" name="options"/>
+                                <label class="slds-radio__label">
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">
+                                        <strong>Enviar boleto de parcelas</strong>
+                                    </span>
+                                </label>
+                            </span>
+
+                            <span class="slds-radio slds-text-heading_small slds-m-top_small">
+                                <input id="type2" type="radio" name="options"/>
+                                <label class="slds-radio__label">
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">
+                                        <strong>Enviar boleto de quitação</strong>
+                                    </span>
+                                </label>
+                            </span>
+
+                            <span class="slds-radio slds-text-heading_small slds-m-top_small">
+                                <input id="type3" type="radio" name="options"/>
+                                <label class="slds-radio__label">
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">
+                                        <strong>Enviar carta IR</strong>
+                                    </span>
+                                </label>
+                            </span>
+
+                            <span class="slds-radio slds-text-heading_small slds-m-top_small">
+                                <input id="type4" type="radio" name="options"/>
+                                <label class="slds-radio__label">
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">
+                                        <strong>Enviar carta anuência</strong>
+                                    </span>
+                                </label>
+                            </span>
+
+                        </div>
+
+                    </fieldset>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</apex:page>

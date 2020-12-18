@@ -1,0 +1,31 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <aura:attribute name="title" type="String" default="Título - Meu Componente"/>
+    <aura:attribute name="conta" type="Account" />
+    <aura:attribute name="recordId" type="id" />
+    <lightning:card>
+        
+        <aura:set attribute="title">
+            <lightning:icon iconName="utility:connected_apps" size="small"/>
+            {!v.title}
+        </aura:set>
+        
+        <aura:set attribute="footer">
+            <lightning:recordEditForm aura:id="recordViewForm"
+                                      recordId="{!v.recordId}"
+                                      recordTypeId="{!v.conta}"
+                                      objectApiName="Account">
+                <lightning:messages />
+                <div class="slds-m-horizontal_small">
+                    <lightning:inputField fieldName="Name"/>
+                    <lightning:inputField fieldName="Phone"/>
+                    <lightning:inputField fieldName="Website"/>
+                </div>
+                <div class="slds-align_absolute-center">
+                    <lightning:button variant="brand" type="submit" label="Salvar" onclick="{!c.showToast}"/>
+                    
+                    <lightning:button variant="brand" type="submit" label="Salvar" onclick="{!c.createContact}"/>
+                </div>
+            </lightning:recordEditForm>
+        </aura:set>
+    </lightning:card>
+</aura:component>
