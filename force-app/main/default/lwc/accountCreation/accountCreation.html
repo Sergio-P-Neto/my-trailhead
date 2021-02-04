@@ -1,0 +1,72 @@
+<template>
+    <lightning-card class="slds-p-left_xx-large" style="width: 50%;">
+        <div class="slds-p-left_xx-large">
+            <p style="font-size: 20px;"><img src={logo} style="max-width: 60px;">&nbsp;&nbsp;&nbsp;&nbsp;Cadastro de Contas:</p>
+        </div>
+
+        <hr/>
+
+        <div class="slds-p-left_xx-large">
+            <p style="font-size: 18px;">Tipo da conta:</p>
+            <lightning-input type="checkbox" data-id="legalEntity" label="Pessoa jurídica" onclick={showLegalEntityFields}></lightning-input>
+            <lightning-input type="checkbox" data-id="physicalPerson" label="Pessoa física" onclick={showPhysicalPersonFields}></lightning-input>
+        </div>
+
+        <br/>
+
+        <template if:true={isSelected}>
+            <div class="slds-p-left_xx-large" style="width: 50%;">
+                <lightning-record-edit-form object-api-name="Account">
+                    <template for:each={accountFields} for:item="field">
+                        <div key={field}>
+                            <lightning-input-field field-name={field} data-id={field}></lightning-input-field>
+                        </div>
+                    </template>
+                </lightning-record-edit-form>
+            </div>
+        </template>
+
+        <template if:true={isLegalEntity}>
+            <hr/>
+            <div class="slds-p-left_xx-large" style="width: 50%;">
+                <p style="font-size: 18px;">Contatos:</p><br/>
+                <c-contact-related-to-account></c-contact-related-to-account>
+                
+                <br/>
+
+                <div class="slds-p-left_xx-large">
+                    <div class="slds-align_absolute-center">
+                        <lightning-button variant="brand" label="Incluir" title="Primary action" onclick={includeContact} class="slds-m-left_x-small"></lightning-button>
+                    </div>
+                </div>
+
+                <br/>
+
+                <div>
+                    <lightning-datatable
+                            key-field="id"
+                            data={accountContacts}
+                            columns={columns}>
+                    </lightning-datatable>
+                </div>
+                
+            </div>
+        </template>
+
+        <template if:true={isSelected}>
+            <br/><br/>
+            <div class="slds-p-left_xx-large" style="width: 50%;">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_6-of-12">
+                        <lightning-button variant="brand" label="Salvar" title="Primary action" onclick={handleSave} class="slds-m-left_x-small"></lightning-button>
+                    </div>
+
+                    <div class="slds-col slds-size_6-of-12" style="text-align: right;">
+                        <lightning-button variant="brand" label="Cancelar" title="Primary action" onclick={handleCancel} class="slds-m-left_x-small"></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+    </lightning-card>
+</template>

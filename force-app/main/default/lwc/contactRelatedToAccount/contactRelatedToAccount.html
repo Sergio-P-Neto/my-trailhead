@@ -1,0 +1,9 @@
+<template>
+    <lightning-record-edit-form object-api-name={contactObject}>
+        <template for:each={contactFields} for:item="field">
+            <div key={field.fieldApiName}>
+                <lightning-input-field data-id={field.fieldApiName} field-name={field}></lightning-input-field>
+            </div>
+        </template>
+    </lightning-record-edit-form>
+</template>
